@@ -1,0 +1,13 @@
+{
+  "name": "jest-course",
+  "module": "index.ts",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "jest": "^30.1.3"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "private": true,
+  "type": "module"
+}
