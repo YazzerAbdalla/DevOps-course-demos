@@ -7,14 +7,19 @@ interface Client {
   name: string;
   email: string;
 }
-export function createClient(client: Client) {
+interface ClientResponse {
+  message: string;
+  status: number;
+  client?: Client;
+}
+export function createClient(client: Client): ClientResponse {
   const { name, email } = client;
   if (name.length < 3) {
-    return { message: "Name should be bigger than 3 letters", status: 401 };
+    return { message: "Name should be bigger than 3 letters.", status: 401 };
   }
   if (!isValidEmail(email)) {
-    return "Enter valide email";
+    return { message: "Enter valide email.", status: 401 };
   }
 
-  return { message: "New client created successfuly", status: 201, client };
+  return { message: "New client created successfuly.", status: 201, client };
 }
